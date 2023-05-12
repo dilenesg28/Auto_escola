@@ -13,7 +13,7 @@ function atualizar() {
     atividades.forEach(atividade =>
         document.querySelector("#atividades").innerHTML += criarCard(atividade))
 
-
+    
 }
 
 
@@ -39,8 +39,13 @@ function cadastrar() {
     if (!isValid(atividade.categoria, document.querySelector("#categoria"))) return
     if (!isValid(atividade.dataI, document.querySelector("#dataI"))) return
     atividades.push(atividade)
-    atualizar()
+    atualizar()   
+
+
+
+
     modal.hide()
+
 }
 
 
@@ -57,11 +62,13 @@ function isValid(valor, campo) {
 
 }
 function limparCard(atividade) {
-    document.querySelector("#titulo").value = ""
-    document.querySelector("#categoria").value = ""
-    document.querySelector("dataI").value = ""
-    document.querySelector("#pontos").value = "1"
-    document.querySelector("#obs").value = ""
+
+
+   // document.querySelector("#titulo").value = ""
+    //document.querySelector("#categoria").value = ""
+   // document.querySelector("dataI").value = ""
+   // document.querySelector("#pontos").value = "1"
+   // document.querySelector("#obs").value = ""
 }
 
 
