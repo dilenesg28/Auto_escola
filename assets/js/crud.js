@@ -3,8 +3,16 @@ document.querySelector("#salvar").addEventListener("click", cadastrar)
 let atividades = []
 
 window.addEventListener("load", () => {
-    atividades = JSON.parse(localStorage.getItem("atividades"))
+    atividades = JSON.parse(localStorage.getItem("atividades")) || []
+    atualizar()
 })
+
+function atualizar(){
+    localStorage.setItem("atividades", JSON.stringify(atividades))
+    document.querySelector("#atividades").innerHTML = ""
+    atividades.forEach(atividade => 
+        document.querySelector("#atividades").innerHTML += criarCard(atividade))
+}
 
 
 function cadastrar() {
@@ -22,15 +30,17 @@ function cadastrar() {
         dataI,
         categoria,
         obs,
-        concluida: false
+        concluida: true
     }
 
     if (!isValid(atividade.titulo, document.querySelector("#titulo"))) return
     if (!isValid(atividade.categoria, document.querySelector("#categoria"))) return
     if (!isValid(atividade.dataI, document.querySelector("#dataI"))) return
     atividades.push(atividade)
+    atualizar()
     modal.hide()
 }
+
 
 function isValid(valor, campo) {
     if (valor.length == 0) {
@@ -44,12 +54,6 @@ function isValid(valor, campo) {
     }
 
 }
-/*
-function apagar(atividades) {
-    atividades = tarefas.filter(tarefa => tarefa.id !== id)
-    atualizar()
-}
-*/
 
 function criarCard(atividade) {
     let disabled = atividade.concluida ? "disabled" : ""
