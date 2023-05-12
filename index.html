@@ -27,7 +27,8 @@
   <!--        expandi o conteudo da linha                aumenta a fonte            muda a cor de fundo do navbar-->
   <nav class="navbar bg-blue navbar navbar-expand-lg  navbar-brand mb-0 h1 " style="background-color:#5F9EA0;">
     <div class="container-fluid">
-      <img src="./assets/image/autoescola.png" alt="Logotipo" width="50" height="30" class="d-inline-block align-text-top">
+      <img src="./assets/image/autoescola.png" alt="Logotipo" width="50" height="30"
+        class="d-inline-block align-text-top">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,8 @@
               <li>
                 <hr class="dropdown-divider" style="background-color: crimson;">
               </li>
-              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar Atividade</a>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar
+                  Atividade</a>
               </li>
             </ul>
         </ul>
@@ -77,9 +79,9 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <!--                        Mudando a cor do formulário -->
-        <div class="modal-content" style="background-color:#6495ED;" style="background: #316aaf;">
-          <div class="modal-header">
+        <!--                        Mudando a cor do formulário  style="background-color: #316aaf;" -->
+        <div class="modal-content" style="background:#6495ED;">
+          <div class="modal-header" style="background: #cd48df;">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Atividade</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
           </div>
@@ -92,7 +94,7 @@
                 <input id="pontos" type="number" value="1" class="form-control" placeholder="pontos"
                   aria-label="pontos">
               </div>
-              <div class="col-12" style="display: flex;">
+              <div class="col-12">
                 <input id="dataI" type="date" class="form-control" placeholder="dataI" aria-label="dataI">
               </div>
               <div class="col-12">
@@ -103,23 +105,23 @@
                   <option value="prova_pratica">Prova prática</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <div id="obs">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="observações"></textarea>
-                </div>
-
+              <div class="col-12">
+                <textarea input id="obs" type="text" class="form-control" id="exampleFormControlTextarea1"
+                  placeholder="Breve observação"></textarea>
               </div>
+
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button id="salvar" type="button" class="btn btn-primary">Salvar</button>            
-          </div>
+        </div>
+        <div class="modal-footer" style="background: #cd48df;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button id="salvar" type="button" class="btn btn-primary">Salvar</button>
         </div>
       </div>
     </div>
-    
-    <script src="./assets/js/crud.js"></script>
+  </div>
+
+  <script src="./assets/js/crud.js"></script>
 </body>
 
 </html>
