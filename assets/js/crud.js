@@ -65,7 +65,10 @@ function limparCard(atividade) {
 }
 
 
-
+function apagar(botao){
+    /*botao.parentNode.parentNode.parentNode.remove()*/
+    botao.parentNode.parentNode.parentNode.remove()
+}
 
 function criarCard(atividade) {
     let disabled = atividade.concluida ? "disabled" : ""
