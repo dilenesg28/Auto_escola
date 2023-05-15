@@ -1,3 +1,5 @@
+
+
 document.querySelector("#salvar").addEventListener("click", cadastrar)
 
 let atividades = []
@@ -11,8 +13,7 @@ function atualizar() {
     localStorage.setItem("atividades", JSON.stringify(atividades))
     document.querySelector("#atividades").innerHTML = ""
     atividades.forEach(atividade =>
-        document.querySelector("#atividades").innerHTML += criarCard(atividade))
-
+        document.querySelector("#atividades").innerHTML += criarCard(atividade))  
     
 }
 
@@ -21,6 +22,8 @@ function cadastrar() {
     const titulo = document.querySelector("#titulo").value
     const pontos = document.querySelector("#pontos").value
     const dataI = document.querySelector("#dataI").value
+ 
+ 
     const categoria = document.querySelector("#categoria").value
     const obs = document.querySelector("#obs").value
     const modal = bootstrap.Modal.getInstance(document.querySelector("#exampleModal"))
@@ -32,18 +35,14 @@ function cadastrar() {
         dataI,
         categoria,
         obs,
-        concluida: true
+        concluida: false
     }
 
     if (!isValid(atividade.titulo, document.querySelector("#titulo"))) return
     if (!isValid(atividade.categoria, document.querySelector("#categoria"))) return
     if (!isValid(atividade.dataI, document.querySelector("#dataI"))) return
     atividades.push(atividade)
-    atualizar()   
-
-
-
-
+    atualizar()  
     modal.hide()
 
 }
@@ -66,7 +65,7 @@ function limparCard(atividade) {
 
    // document.querySelector("#titulo").value = ""
     //document.querySelector("#categoria").value = ""
-   // document.querySelector("dataI").value = ""
+   // document.querySelector("#dataI").value = ""
    // document.querySelector("#pontos").value = "1"
    // document.querySelector("#obs").value = ""
 }
@@ -83,18 +82,28 @@ function criarCard(atividade) {
     const card = `
         <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="card">
-            <div class="card-header"  style="background-color: #4682B4;" style="font-size: medium;">
-                ${atividade.titulo}
+            <div class="card-header"  style="background-color: #4682B4;" style="font-size: medium;">${atividade.titulo}                 
             </div>
-            <div class="input-group date" data-provide="datepicker">           
-                ${atividade.dataI}
+          
+
+            <div class="input-group-addon"  >
+                <span class="glyphicon glyphicon-th" >${atividade.dataI}</span>
+                
             </div>
+            
+            
+      
+
             <div class="card-body" style="background-color: #B0C4DE;"> 
-                <p class="card-text">${atividade.obs}</p>                 
+                <p class="card-text" >${atividade.obs}</p>                 
             </div>
             <div class="card-body" style="background-color: #B0C4DE;"> 
                 <span class="badge text-bg-warning">${atividade.categoria}</span>
                 <span class="badge text-bg-warning">${atividade.pontos}pt</span>
+
+
+                
+
             </div>       
             <div class="card-footer" style="background: #6495ED;">
                 <a href="#" class="btn btn-success" title="marcar como concluída">
@@ -109,3 +118,12 @@ function criarCard(atividade) {
     `
     return card
 }
+/*
+${atividade.dataI}.datepicker({
+    format: 'dd/mm/yyyy',
+    language:"pt-BR",
+    startDate: '-3d'
+
+});
+
+*/

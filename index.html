@@ -16,6 +16,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <!-- fim - links do bootstrap -->
+  <!-- APi do google -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <!-- FIM APi do google -->
+  <!-- locais onde estão os scripts e configurações CSS do calendário -->
+  <link rel="stylesheet" href="./bootstrap-datepicker-1.9.0-dist (1)/css/bootstrap-datepicker.css">
+  <!--
+    <script src="./bootstrap-datepicker-1.9.0-dist (1)/js/bootstrap-datepicker.min.js"></script>
+  -->
+  <script src="./bootstrap-datepicker-1.9.0-dist (1)/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+  <!-- fim locais onde estão os scripts e configurações CSS do calendário -->
+ 
 
 </head>
 
@@ -91,12 +102,25 @@
                 <input id="titulo" type="text" class="form-control" placeholder="título" aria-label="título">
               </div>
               <div class="col-12">
-                <input id="pontos" type="number" value="1" class="form-control" placeholder="pontos"
-                  aria-label="pontos">
+                <input id="pontos" type="number" value="1" class="form-control" placeholder="pontos" aria-label="pontos">
               </div>
               <div class="col-12">
-                <input id="dataI" type="date" class="form-control" placeholder="dataI" aria-label="dataI">
+              <!--      
+                <input id="dataI" type="text" class="form-control" placeholder="dataI" aria-label="dataI">
+              -->            
+                <!--inserido -->
+              
+
+              <div class="input-group date">
+                <input type="date"  class="form-control" placeholder="Data" id="dataI" >             
+                
               </div>
+            
+                  
+
+              
+            <!--fim da inserção -->
+            </div>
               <div class="col-12">
                 <select id="categoria" class="form-select" aria-label="selecione a categoria">
                   <option selected>selecione a categoria</option>
@@ -106,7 +130,7 @@
                 </select>
               </div>
               <div class="col-12">
-                <textarea input id="obs" type="text" class="form-control" id="exampleFormControlTextarea1"
+                <textarea input id="obs" type="text" class="form-control"  id="exampleFormControlTextarea1"
                   placeholder="Breve observação"></textarea>
               </div>
 
@@ -121,7 +145,11 @@
     </div>
   </div>
 
+ 
+
+
   <script src="./assets/js/crud.js"></script>
+ 
 </body>
 
 </html>
